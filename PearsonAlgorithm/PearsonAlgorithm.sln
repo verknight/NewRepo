@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task", "Task\Task.csproj", "{2B713953-7B8D-4FD6-9DA6-D1D23A949900}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlrthmsLib", "Task\AlrthmsLib.csproj", "{2B713953-7B8D-4FD6-9DA6-D1D23A949900}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "ConsoleApplication1\Main.csproj", "{075FB960-4774-426C-8153-C4A095B10363}"
 EndProject

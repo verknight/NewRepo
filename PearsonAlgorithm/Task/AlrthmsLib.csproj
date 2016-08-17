@@ -7,8 +7,8 @@
     <ProjectGuid>{2B713953-7B8D-4FD6-9DA6-D1D23A949900}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task</RootNamespace>
-    <AssemblyName>Task</AssemblyName>
+    <RootNamespace>AlrthmsLib</RootNamespace>
+    <AssemblyName>AlrthmsLib</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
