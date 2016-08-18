@@ -24,9 +24,13 @@ namespace Main
         };
         #endregion
 
-        private static bool IsNumericType(object o)
+        private static Type IsNumericType(object o)
         {
-            return NumericType.Contains(o.GetType()) || NumericType.Contains(Nullable.GetUnderlyingType(o.GetType()));
+            if (NumericType.Contains(o.GetType()) || NumericType.Contains(Nullable.GetUnderlyingType(o.GetType())))
+            {
+                
+            }
+            return null;
         }
         public static Array GetRanDomValue(Type type,int size)
         {
@@ -35,9 +39,14 @@ namespace Main
             Array dumpArr = Array.CreateInstance(type,size);
             int i, length = dumpArr.GetLength(0);
             Random r = new Random();
+            switch (){
+                case: { }
+                    break;
+
+            }
             for (i = 0; i < length; i++)
             {
-                dumpArr.SetValue(r.n)
+                //dumpArr.SetValue()
             }
             return dumpArr;
         }
