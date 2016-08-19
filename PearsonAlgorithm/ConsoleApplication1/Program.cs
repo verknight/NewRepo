@@ -6,6 +6,21 @@ using System.Threading.Tasks;
 using AlrthmsLib;
 namespace Main
 {
+    public static class ShuffleExtensions
+    {
+        public static IEnumerable<tsource> RandomShuffle<tsource>(this IEnumerable<tsource> source)
+        {
+            var rand = new Random();
+            return source.Select(t => new
+            {
+                Index = rand.Next(),
+                Value = t
+            })
+                .OrderBy(p => p.Index)
+                .Select(p => p.Value);
+        }
+    }
+
     class Program
     {
         #region Field declaration
@@ -23,6 +38,21 @@ namespace Main
             TypeCode.Decimal
         };
         #endregion
+
+        public static void TestRandomShuffle()
+        {
+            // create and populate the original list with 1000 elements
+            var l = new List<int>(100);
+            for (var i = 0; i < 100; i++)
+                l.Add(i);
+
+            var shuffled = l.RandomShuffle().ToArray();
+            for (var i = 0; i < 100; i++) { 
+                if (i % 5 == 0) { Console.Write("\n"); }
+                Console.Write(i + ":" + shuffled[i].ToString() + ",");
+            }
+            Console.ReadLine();
+        }
 
         private static bool IsNumericType(object o)
         {   
@@ -45,16 +75,17 @@ namespace Main
         }
         private static void ShowResult()
         {
-            Array input = GetRanDomValue(typeof(int),20);
-            Array.Sort(input);
-            if (input == null) { Console.WriteLine("Empty"); }
-            int length = input.GetLength(0) , i, randomKey = (new Random()).Next(100);
+            Array wList = GetRanDomValue(typeof(int),100);
+            Array tList = GetRanDomValue(typeof(int),200);
+            Array.Sort(wList);
+            if (wList == null) { Console.WriteLine("Empty"); }
+            int length = wList.GetLength(0) , i, randomKey = (new Random()).Next(100);
             for (i = 0; i < length; i++)
             {
                 if (i % 5 == 0) { Console.Write("\n"); }
-                Console.Write(" {0}-{1} ",input.GetValue(i),i);
+                Console.Write(" {0}-{1} ",wList.GetValue(i),i);
             }
-            int result = PsTSearching.BinarySearch(randomKey, input);
+            int result = PsTSearching.BinarySearch(randomKey, wList);
             if (result == -1) { Console.WriteLine("Not found"); return; }
             Console.ReadLine();
             Console.WriteLine("Found {0} at {1}", randomKey, result);
@@ -62,7 +93,8 @@ namespace Main
         }
         static void Main(string[] args)
         {
-            ShowResult();
+            //ShowResult();
+            TestRandomShuffle();
         }
     }
 }
