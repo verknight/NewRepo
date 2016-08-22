@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AlrthmsLib;
+using ExChap1;
 namespace Main
 {
     public static class ShuffleExtensions
@@ -91,10 +92,43 @@ namespace Main
             Console.WriteLine("Found {0} at {1}", randomKey, result);
             Console.ReadLine();
         }
+
+        private static void Ex1_1_22Res()
+        {
+            Array WList = GetRanDomValue(typeof(int),200);
+            Array.Sort(WList);
+            int i,j;
+            for (i = 0; i < WList.Length; i++)
+            {
+                if (i % 5 == 0) { Console.Write("\n"); }
+                Console.Write(" {0}-{1} ", WList.GetValue(i), i);
+            }
+            Console.WriteLine("\n");
+            int[] keys = new int[100];
+            Random r = new Random();
+            for (j = 0; j < keys.Length; j++)
+            {
+                keys[j] = r.Next(100);
+            }
+            int result;
+            List<int> TList = new List<int>();
+            foreach (int val in keys)
+            {
+                result = ExChap1.Ex1_1_22.RecursiveBinarySearch(WList, val);
+                if (result == -1) { TList.Add(val); }
+                Console.WriteLine("Ex1_1_22 result, found key {0} at {1}", val, result);
+                //Console.ReadLine();
+            }
+            foreach (var val in TList) {
+                Console.WriteLine("{0}".PadRight(2), val);
+            }
+            Console.ReadLine();
+        }
         static void Main(string[] args)
         {
             //ShowResult();
-            TestRandomShuffle();
+            //TestRandomShuffle();
+            Ex1_1_22Res();
         }
     }
 }
