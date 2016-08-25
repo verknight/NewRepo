@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ex1_1_22.cs" />
+    <Compile Include="Ex1_1_28.cs" />
+    <Compile Include="Ex1_1_29.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

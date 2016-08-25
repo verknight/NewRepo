@@ -60,7 +60,7 @@ namespace Main
             return (NumericType.Contains(Type.GetTypeCode(o as Type)) || NumericType.Contains(Type.GetTypeCode(Nullable.GetUnderlyingType(o as Type))) );
         }
         
-        public static Array GetRanDomValue(Type type,int size)
+        public static Array GetRanDomValue(Type type,int size, int maxvalue = 199)
         {
             if (size <= 1) { return null; }
             if (!IsNumericType(type)) { return null; }
@@ -70,14 +70,15 @@ namespace Main
             //TypeCode tCode = Type.GetTypeCode(type);
             for (i = 0; i < length; i++)
             {
-                dumpArr.SetValue(r.Next(100),i);
+                dumpArr.SetValue(r.Next(maxvalue),i);
             }
             return dumpArr;
         }
+
         private static void ShowResult()
         {
-            Array wList = GetRanDomValue(typeof(int),100);
-            Array tList = GetRanDomValue(typeof(int),200);
+            Array wList = GetRanDomValue(typeof(int),500);
+            //Array tList = GetRanDomValue(typeof(int),200);
             Array.Sort(wList);
             if (wList == null) { Console.WriteLine("Empty"); }
             int length = wList.GetLength(0) , i, randomKey = (new Random()).Next(100);
@@ -124,11 +125,35 @@ namespace Main
             }
             Console.ReadLine();
         }
+
+        private static void Ex1_1_28Res()
+        {
+            Array WList = GetRanDomValue(typeof(int),55);
+            Array.Sort(WList);
+            List<AlgNumber> res = Ex1_1_28.GetCompactListOfArray(WList);
+            int i,j;
+            for (j = 0; j < WList.Length; j++)
+            {
+                if (j % 5 == 0) { Console.Write("\n"); }
+                Console.Write("{0} ", WList.GetValue(j));
+            }
+            Console.ReadLine();
+            for (i = 0; i < res.Count; i++)
+            {
+                //if (i % 5 == 0) { Console.Write("\n"); }
+                Console.Write("{0} \n", res[i]);
+
+            }
+            Console.ReadLine();
+
+
+        }
         static void Main(string[] args)
         {
             //ShowResult();
             //TestRandomShuffle();
-            Ex1_1_22Res();
+            //Ex1_1_22Res();
+            Ex1_1_28Res();
         }
     }
 }
