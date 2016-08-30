@@ -60,7 +60,7 @@ namespace Main
             return (NumericType.Contains(Type.GetTypeCode(o as Type)) || NumericType.Contains(Type.GetTypeCode(Nullable.GetUnderlyingType(o as Type))) );
         }
         
-        public static Array GetRanDomValue(Type type,int size, int maxvalue = 199)
+        public static Array GetRanDomValue(Type type,int size, int maxvalue = 15)
         {
             if (size <= 1) { return null; }
             if (!IsNumericType(type)) { return null; }
@@ -128,7 +128,7 @@ namespace Main
 
         private static void Ex1_1_28Res()
         {
-            Array WList = GetRanDomValue(typeof(int),55);
+            Array WList = GetRanDomValue(typeof(int),100);
             Array.Sort(WList);
             List<AlgNumber> res = Ex1_1_28.GetCompactListOfArray(WList);
             int i,j;
@@ -142,18 +142,40 @@ namespace Main
             {
                 //if (i % 5 == 0) { Console.Write("\n"); }
                 Console.Write("{0} \n", res[i]);
-
             }
             Console.ReadLine();
-
-
         }
+
+        private static void Ex1_1_29Res()
+        {
+            Array input = GetRanDomValue(typeof(int),55);
+            Array.Sort(input);
+            int randomKey = (new Random()).Next(5);
+            List<AlgNumber> res = Ex1_1_28.GetCompactListOfArray(input);
+            int i, j;
+            for (j = 0; j < input.Length; j++)
+            {
+                if (j % 5 == 0) { Console.Write("\n"); }
+                Console.Write("{0} ", input.GetValue(j));
+            }
+            Console.ReadLine();
+            for (i = 0; i < res.Count; i++)
+            {
+                //if (i % 5 == 0) { Console.Write("\n"); }
+                Console.Write("{0} \n", res[i]);
+            }
+            Console.WriteLine("Random val: {0} Rank: {1} Count: {2}", randomKey, Ex1_1_29.rank(randomKey, input), Ex1_1_29.count(randomKey, input));
+            Console.ReadLine();
+        }
+
+
         static void Main(string[] args)
         {
             //ShowResult();
             //TestRandomShuffle();
             //Ex1_1_22Res();
-            Ex1_1_28Res();
+            //Ex1_1_28Res();
+            Ex1_1_29Res();
         }
     }
 }
