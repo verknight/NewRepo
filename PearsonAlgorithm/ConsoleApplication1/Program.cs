@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using ExChap1;
 using AlrthmsLib;
-
 namespace Main
 {
     public static class ShuffleExtensions

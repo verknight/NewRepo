@@ -8,7 +8,7 @@ namespace ExChap1
         {
             if (key < 0 || input.Length == 0) { return -1; }
             List<AlgNumber> compactArrList = Ex1_1_28.GetCompactListOfArray(input);
-            int length = input.Length, res = 0, compactLength = compactArrList.Count, i;
+            int length = input.Length, res = 0, compactLength = compactArrList.Count;
             
             if (!compactArrList.Exists(item => item.SeedVal == key)) { return -1; }
             foreach (var item in compactArrList)

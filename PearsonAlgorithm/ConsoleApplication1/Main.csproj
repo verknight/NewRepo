@@ -65,13 +65,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExChap1\ExChap1.csproj">
-      <Project>{7924717e-5bc0-4c63-ab6d-8581a4f02715}</Project>
-      <Name>ExChap1</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AlrthmsLib\AlrthmsLib.csproj">
       <Project>{2b713953-7b8d-4fd6-9da6-d1d23a949900}</Project>
       <Name>AlrthmsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExChap1\ExChap1.csproj">
+      <Project>{7924717e-5bc0-4c63-ab6d-8581a4f02715}</Project>
+      <Name>ExChap1</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
