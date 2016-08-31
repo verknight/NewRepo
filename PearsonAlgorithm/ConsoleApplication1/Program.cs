@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AlrthmsLib;
 using ExChap1;
+using AlrthmsLib;
+
 namespace Main
 {
     public static class ShuffleExtensions

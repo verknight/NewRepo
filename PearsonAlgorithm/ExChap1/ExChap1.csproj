@@ -46,7 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task\AlrthmsLib.csproj">
+    <ProjectReference Include="..\AlrthmsLib\AlrthmsLib.csproj">
       <Project>{2b713953-7b8d-4fd6-9da6-d1d23a949900}</Project>
       <Name>AlrthmsLib</Name>
     </ProjectReference>

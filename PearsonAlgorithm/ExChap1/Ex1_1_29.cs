@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AlrthmsLib;
 namespace ExChap1
 {
     public class Ex1_1_29
