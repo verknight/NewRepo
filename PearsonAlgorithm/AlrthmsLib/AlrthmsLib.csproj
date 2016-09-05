@@ -50,9 +50,6 @@
     <Compile Include="PsTSearching.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Algs4Net\" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
